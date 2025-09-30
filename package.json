@@ -1,0 +1,16 @@
+{
+  "name": "product-analytics-app",
+  "version": "1.0.0",
+  "description": "Product Analytics Platform built with Streamlit",
+  "scripts": {
+    "build": "pip install -r requirements.txt",
+    "start": "streamlit run app.py --server.port=8501 --server.address=0.0.0.0"
+  },
+  "dependencies": {
+    "@netlify/plugin-python": "^1.0.0"
+  },
+  "devDependencies": {},
+  "keywords": ["analytics", "streamlit", "product", "dashboard"],
+  "author": "Dheerajtechie",
+  "license": "MIT"
+}

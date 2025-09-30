@@ -1,19 +1,13 @@
 [build]
-  command = "pip install -r requirements.txt"
-  functions = "netlify/functions"
-
-[build.environment]
-  PYTHON_VERSION = "3.9"
-
-[[plugins]]
-  package = "@netlify/plugin-python"
+  command = "echo 'Building static landing page'"
+  publish = "."
 
 [dev]
-  command = "streamlit run app.py"
-  port = 8501
+  command = "echo 'Static site ready'"
+  port = 80
   publish = "."
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/netlify-static.html"
   status = 200

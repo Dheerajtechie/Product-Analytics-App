@@ -41,7 +41,7 @@
 
 ---
 
-## Option 4: Netlify (Python Support)
+## Option 4: Netlify (Static Landing Page)
 
 ### Steps:
 1. **Go to**: [netlify.com](https://netlify.com)
@@ -49,15 +49,15 @@
 3. **New site from Git**
 4. **Connect**: `Dheerajtechie/Product-Analytics-App`
 5. **Build settings**:
-   - Build command: `pip install -r requirements.txt`
+   - Build command: `echo 'Building static landing page'`
    - Publish directory: `.`
 6. **Deploy**: Automatic deployment
 
 ### Netlify Configuration:
-- Uses `netlify.toml` for configuration
-- Python 3.9 runtime
-- Automatic HTTPS
-- Global CDN
+- Creates a beautiful landing page
+- Links to deployment options
+- Static site with redirects
+- Perfect for showcasing the project
 
 ---
 
