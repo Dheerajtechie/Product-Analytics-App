@@ -41,7 +41,58 @@
 
 ---
 
-## Option 4: Render (Free Tier)
+## Option 4: Netlify (Python Support)
+
+### Steps:
+1. **Go to**: [netlify.com](https://netlify.com)
+2. **Sign up/Login** with GitHub
+3. **New site from Git**
+4. **Connect**: `Dheerajtechie/Product-Analytics-App`
+5. **Build settings**:
+   - Build command: `pip install -r requirements.txt`
+   - Publish directory: `.`
+6. **Deploy**: Automatic deployment
+
+### Netlify Configuration:
+- Uses `netlify.toml` for configuration
+- Python 3.9 runtime
+- Automatic HTTPS
+- Global CDN
+
+---
+
+## Option 5: Vercel (Python Support)
+
+### Steps:
+1. **Go to**: [vercel.com](https://vercel.com)
+2. **Sign up/Login** with GitHub
+3. **Import Project**: `Dheerajtechie/Product-Analytics-App`
+4. **Framework**: Python
+5. **Deploy**: Automatic deployment
+
+### Vercel Configuration:
+- Uses `vercel.json` for configuration
+- Python 3.9 runtime
+- Edge functions support
+- Global CDN
+
+---
+
+## Option 6: Docker Deployment (Any Platform)
+
+### Docker Hub:
+1. **Build image**: `docker build -t your-username/product-analytics .`
+2. **Push to Docker Hub**: `docker push your-username/product-analytics`
+3. **Deploy anywhere**: Use the Docker image
+
+### Docker Compose:
+```bash
+docker-compose up -d
+```
+
+---
+
+## Option 7: Render (Free Tier)
 
 ### Steps:
 1. **Go to**: [render.com](https://render.com)
@@ -52,16 +103,24 @@
 
 ---
 
-## 🎯 RECOMMENDED: Streamlit Cloud
+## 🎯 RECOMMENDED OPTIONS:
 
-**Why Streamlit Cloud?**
+### **Streamlit Cloud** (Best for Streamlit)
 - ✅ **100% FREE** forever
 - ✅ **Zero configuration** needed
-- ✅ **Automatic updates** from GitHub
-- ✅ **Custom domain** support
-- ✅ **SSL certificate** included
-- ✅ **Global CDN** for fast loading
 - ✅ **Perfect for Streamlit apps**
+
+### **Netlify** (Best for Static + Python)
+- ✅ **FREE tier** available
+- ✅ **Excellent Python support**
+- ✅ **Global CDN**
+- ✅ **Automatic HTTPS**
+
+### **Vercel** (Best for Performance)
+- ✅ **FREE tier** available
+- ✅ **Edge functions**
+- ✅ **Global CDN**
+- ✅ **Excellent performance**
 
 ### Your Live URL will be:
 `https://dheerajtechie-product-analytics-app.streamlit.app`
