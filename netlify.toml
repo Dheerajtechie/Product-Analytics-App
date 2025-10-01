@@ -2,6 +2,10 @@
   command = "echo 'Static landing for Netlify'"
   publish = "."
 
+[build.environment]
+  MISE_DISABLE = "1"
+  MISE_PYTHON_COMPILE = "0"
+
 [dev]
   command = "echo 'Netlify static dev'"
   port = 8888
