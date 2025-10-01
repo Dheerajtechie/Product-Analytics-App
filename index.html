@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Analytics Platform</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 20px;
+        }
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .deploy-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .features {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 30px;
+        }
+        .feature {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .github-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .github-link:hover {
+            color: white;
+        }
+    </style>
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#667eea" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📊</div>
+        <h1>Product Analytics Platform</h1>
+        <p class="subtitle">Enterprise-grade analytics solution with 7 core tools</p>
+        <div class="deploy-buttons">
+            <a href="https://share.streamlit.io" class="btn" target="_blank" rel="noopener noreferrer">🚀 Open on Streamlit Cloud</a>
+            <a href="https://vercel.com" class="btn" target="_blank" rel="noopener noreferrer">⚡ View on Vercel</a>
+            <a href="https://app.netlify.com" class="btn" target="_blank" rel="noopener noreferrer">🌐 View on Netlify</a>
+        </div>
+        <div class="features">
+            <h3 style="color: white; text-align: center; margin-bottom: 20px;">✨ Features</h3>
+            <div class="feature"><span class="feature-icon">📈</span><span>KPI Dashboard with real-time metrics</span></div>
+            <div class="feature"><span class="feature-icon">🔄</span><span>Funnel Analysis with drop-off visualization</span></div>
+            <div class="feature"><span class="feature-icon">👥</span><span>Cohort Analysis with retention heatmaps</span></div>
+            <div class="feature"><span class="feature-icon">🚨</span><span>Anomaly Detection with statistical analysis</span></div>
+            <div class="feature"><span class="feature-icon">🧪</span><span>A/B Test Calculator with power analysis</span></div>
+            <div class="feature"><span class="feature-icon">📋</span><span>RICE Prioritization framework</span></div>
+            <div class="feature"><span class="feature-icon">📄</span><span>PRD Generator with live metrics</span></div>
+        </div>
+        <a href="https://github.com/Dheerajtechie/Product-Analytics-App" class="github-link" target="_blank" rel="noopener noreferrer">📁 View on GitHub</a>
+    </div>
+    
+</body>
+</html>
+
+
