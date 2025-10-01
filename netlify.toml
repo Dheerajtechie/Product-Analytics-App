@@ -1,13 +1,26 @@
 [build]
-  command = "echo 'Building static landing page'"
+  command = "pip install -r requirements.txt"
   publish = "."
 
-[dev]
-  command = "echo 'Static site ready'"
-  port = 80
-  publish = "."
+[build.environment]
+  PYTHON_VERSION = "3.11"
+  PIP_CACHE_DIR = "/opt/build/cache/pip"
+
+[[plugins]]
+  package = "@netlify/plugin-python"
+
+[functions]
+  python_runtime = "python3.11"
 
 [[redirects]]
   from = "/*"
-  to = "/netlify-static.html"
+  to = "/.netlify/functions/app"
   status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
