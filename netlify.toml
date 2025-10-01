@@ -5,6 +5,8 @@
 [build.environment]
   MISE_DISABLE = "1"
   MISE_PYTHON_COMPILE = "0"
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--version"
 
 [dev]
   command = "echo 'Netlify static dev'"
