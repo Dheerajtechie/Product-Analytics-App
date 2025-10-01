@@ -11,8 +11,8 @@
 6. **Main file path**: `app.py`
 7. **Click "Deploy!"**
 
-### Your app will be live at:
-`https://your-app-name.streamlit.app`
+### Live app:
+`https://pm-analytics.streamlit.app/`
 
 ---
 

@@ -1,5 +1,7 @@
 ## Product Analytics - Advanced Analytics Platform
 
+👉 Live App: https://pm-analytics.streamlit.app/
+
 A world-class Streamlit application for product teams to analyze user behavior, size experiments, prioritize initiatives, and create professional documentation.
 
 ### Features
@@ -21,6 +23,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 Open the printed Local URL (e.g., `http://localhost:8501`).
+
+Launch online: https://pm-analytics.streamlit.app/
 
 ### 🎨 Features
 - **Beautiful UI**: Gradient branding with animated logo
