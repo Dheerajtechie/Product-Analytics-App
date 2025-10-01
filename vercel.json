@@ -9,10 +9,15 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/app.py"
     }
   ],
   "env": {
-    "PYTHON_VERSION": "3.9"
+    "PYTHON_VERSION": "3.11"
+  },
+  "functions": {
+    "app.py": {
+      "runtime": "python3.11"
+    }
   }
 }
