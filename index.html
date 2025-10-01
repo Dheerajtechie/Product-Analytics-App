@@ -38,11 +38,27 @@
         .screen { position:relative; border-radius: 18px; border:1px solid rgba(255,255,255,.14); background: #0b1220; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); overflow:hidden }
         .screen::before { content:''; position:absolute; inset:0; background: radial-gradient(600px 200px at -5% -5%, rgba(34,197,94,.10), transparent), radial-gradient(600px 200px at 105% -5%, rgba(96,165,250,.10), transparent) }
         .screen img { width:100%; display:block; opacity:.95; filter: saturate(1.02) }
+        .screen iframe { width:100%; height:520px; border:0; border-radius:18px }
         .features { margin-top:40px; display:grid; grid-template-columns: repeat(3, 1fr); gap:16px }
         .feature { padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) }
         .feature .title { font-weight:700; margin:8px 0 }
         .foot { margin-top: 28px; color: var(--muted); font-size: 14px }
-        @media (max-width: 900px) { .hero { grid-template-columns: 1fr } }
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr }
+            h1 { font-size: 32px }
+            .hero-card { padding: 28px }
+            .cta { gap:10px }
+            .screen iframe { height:420px !important }
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 26px }
+            .subtitle { font-size: 16px }
+            .features { grid-template-columns: 1fr }
+            .features-grid { grid-template-columns: 1fr; gap:16px; margin: 24px 0 }
+            .cta { flex-direction: column }
+            .btn, .btn-primary, .btn-ghost { justify-content:center; width:100% }
+            .screen iframe { height:360px !important }
+        }
         /* Navbar & footer */
         .nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px }
         .nav .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px }
