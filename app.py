@@ -16,7 +16,7 @@ from src.tools.prd import generate_prd_markdown
 st.set_page_config(
     page_title="Product Analytics", 
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
     menu_items={
         'Get Help': 'https://docs.streamlit.io',
         'Report a bug': None,
