@@ -19,279 +19,211 @@
         * { box-sizing: border-box }
         body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; margin:0; color:white; background: radial-gradient(1200px 600px at 10% 0%, rgba(34,197,94,.15), transparent), radial-gradient(900px 500px at 90% 10%, rgba(96,165,250,.12), transparent), linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%); }
         .grid { display:grid; place-items:center; min-height:100vh; padding: 48px 24px }
-+        .container { width:100%; max-width:1200px }
-+        .hero { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items:center; margin-bottom: 80px }
-+        .card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border:1px solid rgba(255,255,255,.12); border-radius: 20px; backdrop-filter: blur(10px); box-shadow: 0 24px 80px rgba(0,0,0,.45) }
-+        .hero-card { padding: 40px }
-+        .badge { display:inline-flex; align-items:center; gap:8px; color:#e2e8f0; font-weight:600; background: rgba(148,163,184,.12); border:1px solid rgba(148,163,184,.22); padding:6px 12px; border-radius:999px }
-+        .logo { width:56px; height:56px; display:grid; place-items:center; border-radius:14px; background: conic-gradient(from 180deg, #22c55e, #60a5fa, #a78bfa, #22c55e); box-shadow: inset 0 0 24px rgba(255,255,255,.25); }
-+        .logo span { font-size:30px }
-+        h1 { font-size: 40px; line-height:1.1; margin:16px 0 12px }
-+        .subtitle { color: var(--muted); font-size: 18px; margin: 0 0 24px }
-+        .cta { display:flex; gap:14px; flex-wrap:wrap; margin-top: 22px }
-+        .btn { display:inline-flex; align-items:center; gap:10px; padding: 14px 18px; border-radius: 12px; border:1px solid rgba(255,255,255,.16); color:white; text-decoration:none; font-weight:700; transition:.2s transform, .2s box-shadow, .2s background }
-+        .btn-primary { background: linear-gradient(135deg, var(--accent), #16a34a); box-shadow: 0 10px 30px rgba(34,197,94,.35) }
-+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 40px rgba(34,197,94,.45) }
-+        .btn-ghost { background: rgba(148,163,184,.12) }
-+        .btn-ghost:hover { background: rgba(148,163,184,.22) }
-+        .preview { padding: 0; overflow:hidden }
-+        .screen { position:relative; border-radius: 18px; border:1px solid rgba(255,255,255,.14); background: #0b1220; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); overflow:hidden }
-+        .screen::before { content:''; position:absolute; inset:0; background: radial-gradient(600px 200px at -5% -5%, rgba(34,197,94,.10), transparent), radial-gradient(600px 200px at 105% -5%, rgba(96,165,250,.10), transparent) }
-+        .screen img { width:100%; display:block; opacity:.95; filter: saturate(1.02) }
-+        .features { margin-top:40px; display:grid; grid-template-columns: repeat(3, 1fr); gap:16px }
-+        .feature { padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) }
-+        .feature .title { font-weight:700; margin:8px 0 }
-+        .foot { margin-top: 28px; color: var(--muted); font-size: 14px }
-+        @media (max-width: 900px) { .hero { grid-template-columns: 1fr } }
-+        /* Navbar & footer */
-+        .nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px }
-+        .nav .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px }
-+        .nav .brand .mark { width:34px; height:34px; display:grid; place-items:center; border-radius:8px; background: conic-gradient(from 90deg, #22c55e, #60a5fa, #a78bfa, #22c55e) }
-+        .nav a { color:#cbd5e1; text-decoration:none; font-weight:600 }
-+        .footer { margin-top:56px; padding-top:18px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.1); color:#9aa7b7; font-size:14px }
-+        .footer a { color:#cbd5e1; text-decoration:none }
-+        /* Focus ring */
-+        .btn:focus-visible, a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; border-radius: 10px }
-+        /* New sections */
-+        .section { margin: 80px 0 }
-+        .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 16px }
-+        .section-subtitle { color: var(--muted); text-align: center; font-size: 18px; margin-bottom: 48px }
-+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 48px 0 }
-+        .feature-card { padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); transition: transform .2s }
-+        .feature-card:hover { transform: translateY(-4px) }
-+        .feature-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent2)); margin-bottom: 16px }
-+        .feature-title { font-size: 20px; font-weight: 700; margin-bottom: 8px }
-+        .feature-desc { color: var(--muted); line-height: 1.6 }
-+        .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 48px 0 }
-+        .testimonial { padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) }
-+        .testimonial-text { font-style: italic; margin-bottom: 16px; line-height: 1.6 }
-+        .testimonial-author { display: flex; align-items: center; gap: 12px }
-+        .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)) }
-+        .author-info { display: flex; flex-direction: column }
-+        .author-name { font-weight: 600 }
-+        .author-title { color: var(--muted); font-size: 14px }
-+        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 48px 0 }
-+        .pricing-card { padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); text-align: center }
-+        .pricing-card.featured { border: 2px solid var(--accent); background: linear-gradient(180deg, rgba(34,197,94,.1), rgba(34,197,94,.05)) }
-+        .pricing-title { font-size: 20px; font-weight: 700; margin-bottom: 8px }
-+        .pricing-price { font-size: 32px; font-weight: 800; color: var(--accent); margin-bottom: 16px }
-+        .pricing-features { list-style: none; padding: 0; margin: 24px 0 }
-+        .pricing-features li { padding: 8px 0; color: var(--muted) }
-+        .faq { max-width: 800px; margin: 0 auto }
-+        .faq-item { margin-bottom: 16px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; overflow: hidden }
-+        .faq-question { padding: 20px; background: rgba(255,255,255,.06); font-weight: 600; cursor: pointer; transition: background .2s }
-+        .faq-question:hover { background: rgba(255,255,255,.1) }
-+        .faq-answer { padding: 20px; color: var(--muted); line-height: 1.6; display: none }
-+        .faq-answer.active { display: block }
-+        .bg-anim { position: fixed; inset:0; pointer-events:none; z-index:-1; overflow:hidden }
-+        .blob { position:absolute; width:480px; height:480px; filter: blur(80px); opacity:.18; border-radius:50%; animation: drift 24s ease-in-out infinite }
-+        .blob.green { background: #22c55e; top:-120px; left:-120px }
-+        .blob.blue { background: #60a5fa; bottom:-120px; right:-120px; animation-delay: -8s }
-+        .blob.purple { background: #a78bfa; top:40%; left:60%; animation-delay: -4s }
-+        @keyframes drift { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(40px,-20px) scale(1.05) } }
-     </style>
-     <meta name="robots" content="index,follow" />
-     <meta name="theme-color" content="#667eea" />
-     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
- </head>
- <body>
-     <div class="bg-anim" aria-hidden="true">
-         <div class="blob green"></div>
-         <div class="blob blue"></div>
-         <div class="blob purple"></div>
-     </div>
-     <div class="container">
-         <div class="nav">
-             <div class="brand"><div class="mark">📊</div> Product Analytics</div>
-             <a href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">GitHub</a>
-         </div>
-         <div class="hero">
-             <div class="card hero-card">
-                 <div class="badge"><div class="logo"><span>📊</span></div> Product Analytics Platform</div>
-                 <h1>Make smarter product decisions with live analytics</h1>
-                 <p class="subtitle">Cohorts, funnels, anomalies, A/B test sizing, RICE, and PRD generator — all in one streamlined workspace.</p>
-                 <div class="cta">
-                     <a class="btn btn-primary" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">🚀 Launch Live App</a>
-                     <a class="btn btn-ghost" href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">📁 View Source</a>
-                 </div>
-                 <div class="features">
-                     <div class="feature"><div>📈</div><div><div class="title">KPI & Executive Snapshots</div><div class="subtitle">DAU/WAU/MAU, conversion, and summaries at a glance</div></div></div>
-                     <div class="feature"><div>🔄</div><div><div class="title">Funnels & Drop-offs</div><div class="subtitle">Flexible steps, windows, charts, and CSV export</div></div></div>
-                     <div class="feature"><div>👥</div><div><div class="title">Cohorts & Retention</div><div class="subtitle">Heatmaps and CSV exports for weekly/monthly cohorts</div></div></div>
-                 </div>
-                 <div class="foot">Live: pm-analytics.streamlit.app • Built with Streamlit</div>
-             </div>
-             <div class="card preview">
-                 <div class="screen">
-                     <img src="https://cdn.statically.io/gh/vercel/og-image/main/api/_og.png" alt="App preview" />
-                 </div>
-             </div>
-         </div>
+        .container { width:100%; max-width:1200px }
+        .hero { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items:center; margin-bottom: 48px }
+        .card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border:1px solid rgba(255,255,255,.12); border-radius: 20px; backdrop-filter: blur(10px); box-shadow: 0 24px 80px rgba(0,0,0,.45) }
+        .hero-card { padding: 40px }
+        .badge { display:inline-flex; align-items:center; gap:8px; color:#e2e8f0; font-weight:600; background: rgba(148,163,184,.12); border:1px solid rgba(148,163,184,.22); padding:6px 12px; border-radius:999px }
+        .logo { width:56px; height:56px; display:grid; place-items:center; border-radius:14px; background: conic-gradient(from 180deg, #22c55e, #60a5fa, #a78bfa, #22c55e); box-shadow: inset 0 0 24px rgba(255,255,255,.25); }
+        .logo span { font-size:30px }
+        h1 { font-size: 40px; line-height:1.1; margin:16px 0 12px }
+        .subtitle { color: var(--muted); font-size: 18px; margin: 0 0 24px }
+        .cta { display:flex; gap:14px; flex-wrap:wrap; margin-top: 22px }
+        .btn { display:inline-flex; align-items:center; gap:10px; padding: 14px 18px; border-radius: 12px; border:1px solid rgba(255,255,255,.16); color:white; text-decoration:none; font-weight:700; transition:.2s transform, .2s box-shadow, .2s background }
+        .btn-primary { background: linear-gradient(135deg, var(--accent), #16a34a); box-shadow: 0 10px 30px rgba(34,197,94,.35) }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 40px rgba(34,197,94,.45) }
+        .btn-ghost { background: rgba(148,163,184,.12) }
+        .btn-ghost:hover { background: rgba(148,163,184,.22) }
+        .preview { padding: 0; overflow:hidden }
+        .screen { position:relative; border-radius: 18px; border:1px solid rgba(255,255,255,.14); background: #0b1220; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); overflow:hidden }
+        .screen::before { content:''; position:absolute; inset:0; background: radial-gradient(600px 200px at -5% -5%, rgba(34,197,94,.10), transparent), radial-gradient(600px 200px at 105% -5%, rgba(96,165,250,.10), transparent) }
+        .screen img { width:100%; display:block; opacity:.95; filter: saturate(1.02) }
+        .features { margin-top:40px; display:grid; grid-template-columns: repeat(3, 1fr); gap:16px }
+        .feature { padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) }
+        .feature .title { font-weight:700; margin:8px 0 }
+        .foot { margin-top: 28px; color: var(--muted); font-size: 14px }
+        @media (max-width: 900px) { .hero { grid-template-columns: 1fr } }
+        /* Navbar & footer */
+        .nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px }
+        .nav .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px }
+        .nav .brand .mark { width:34px; height:34px; display:grid; place-items:center; border-radius:8px; background: conic-gradient(from 90deg, #22c55e, #60a5fa, #a78bfa, #22c55e) }
+        .nav a { color:#cbd5e1; text-decoration:none; font-weight:600 }
+        .footer { margin-top:56px; padding-top:18px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.1); color:#9aa7b7; font-size:14px }
+        .footer a { color:#cbd5e1; text-decoration:none }
+        /* Focus ring */
+        .btn:focus-visible, a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; border-radius: 10px }
+        /* Sections */
+        .section { margin: 56px 0 }
+        .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 16px }
+        .section-subtitle { color: var(--muted); text-align: center; font-size: 18px; margin-bottom: 48px }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 48px 0 }
+        .feature-card { padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); transition: transform .2s }
+        .feature-card:hover { transform: translateY(-4px) }
+        .feature-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent2)); margin-bottom: 16px }
+        .feature-title { font-size: 20px; font-weight: 700; margin-bottom: 8px }
+        .feature-desc { color: var(--muted); line-height: 1.6 }
+        .about { max-width: 900px; margin: 0 auto; color: var(--muted); line-height: 1.8; text-align: center }
+        .creator { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:12px; color:#cbd5e1 }
+        .creator .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)) }
+        .links { display:flex; gap: 12px; justify-content:center; flex-wrap:wrap; margin-top:18px }
+        .link { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.12); color:#e2e8f0; text-decoration:none; background: rgba(148,163,184,.08) }
+        .link:hover { background: rgba(148,163,184,.16) }
+        .faq { max-width: 800px; margin: 0 auto }
+        .faq-item { margin-bottom: 16px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; overflow: hidden }
+        .faq-question { padding: 20px; background: rgba(255,255,255,.06); font-weight: 600; cursor: pointer; transition: background .2s }
+        .faq-question:hover { background: rgba(255,255,255,.1) }
+        .faq-answer { padding: 20px; color: var(--muted); line-height: 1.6; display: none }
+        .faq-answer.active { display: block }
+        .bg-anim { position: fixed; inset:0; pointer-events:none; z-index:-1; overflow:hidden }
+        .blob { position:absolute; width:480px; height:480px; filter: blur(80px); opacity:.18; border-radius:50%; animation: drift 24s ease-in-out infinite }
+        .blob.green { background: #22c55e; top:-120px; left:-120px }
+        .blob.blue { background: #60a5fa; bottom:-120px; right:-120px; animation-delay: -8s }
+        .blob.purple { background: #a78bfa; top:40%; left:60%; animation-delay: -4s }
+        @keyframes drift { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(40px,-20px) scale(1.05) } }
+    </style>
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#667eea" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+    <div class="bg-anim" aria-hidden="true">
+        <div class="blob green"></div>
+        <div class="blob blue"></div>
+        <div class="blob purple"></div>
+    </div>
+    <div class="container">
+        <div class="nav">
+            <div class="brand"><div class="mark">📊</div> Product Analytics</div>
+            <a href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <div class="hero">
+            <div class="card hero-card">
+                <div class="badge"><div class="logo"><span>📊</span></div> Product Analytics Platform</div>
+                <h1>Make smarter product decisions with live analytics</h1>
+                <p class="subtitle">Cohorts, funnels, anomalies, A/B test sizing, RICE, and PRD generator — all in one streamlined workspace.</p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">🚀 Launch Live App</a>
+                    <a class="btn btn-ghost" href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">📁 View Source</a>
+                </div>
+                <div class="features">
+                    <div class="feature"><div>📈</div><div><div class="title">KPI & Executive Snapshots</div><div class="subtitle">DAU/WAU/MAU, conversion, and summaries at a glance</div></div></div>
+                    <div class="feature"><div>🔄</div><div><div class="title">Funnels & Drop-offs</div><div class="subtitle">Flexible steps, windows, charts, and CSV export</div></div></div>
+                    <div class="feature"><div>👥</div><div><div class="title">Cohorts & Retention</div><div class="subtitle">Heatmaps and CSV exports for weekly/monthly cohorts</div></div></div>
+                </div>
+                <div class="foot">Live: pm-analytics.streamlit.app • Built with Streamlit</div>
+            </div>
+            <div class="card preview">
+                <div class="screen">
+                    <img src="https://cdn.statically.io/gh/vercel/og-image/main/api/_og.png" alt="App preview" />
+                </div>
+            </div>
+        </div>
 
-         <!-- Features Section -->
-         <div class="section">
-             <h2 class="section-title">Everything you need for product analytics</h2>
-             <p class="section-subtitle">7 powerful tools in one unified platform</p>
-             <div class="features-grid">
-                 <div class="feature-card">
-                     <div class="feature-icon">📈</div>
-                     <div class="feature-title">KPI Dashboard</div>
-                     <div class="feature-desc">Real-time metrics with DAU/WAU/MAU, conversion rates, and executive summaries</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">🔄</div>
-                     <div class="feature-title">Funnel Analysis</div>
-                     <div class="feature-desc">Custom steps, conversion windows, drop-off visualization, and CSV exports</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">👥</div>
-                     <div class="feature-title">Cohort Analysis</div>
-                     <div class="feature-desc">Weekly/monthly retention heatmaps with interactive visualizations</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">🚨</div>
-                     <div class="feature-title">Anomaly Detection</div>
-                     <div class="feature-desc">Statistical analysis with rolling z-scores for DAU, signups, and conversions</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">🧪</div>
-                     <div class="feature-title">A/B Test Calculator</div>
-                     <div class="feature-desc">Sample size calculation and detectable effect analysis for experiments</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">📋</div>
-                     <div class="feature-title">RICE Prioritization</div>
-                     <div class="feature-desc">Editable scoring framework with CSV import/export capabilities</div>
-                 </div>
-                 <div class="feature-card">
-                     <div class="feature-icon">📄</div>
-                     <div class="feature-title">PRD Generator</div>
-                     <div class="feature-desc">Automated product requirements with live metrics integration</div>
-                 </div>
-             </div>
-         </div>
+        <!-- Features Section -->
+        <div class="section">
+            <h2 class="section-title">Everything you need for product analytics</h2>
+            <p class="section-subtitle">7 powerful tools in one unified platform</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-title">KPI Dashboard</div>
+                    <div class="feature-desc">Real-time metrics with DAU/WAU/MAU, conversion rates, and executive summaries</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-title">Funnel Analysis</div>
+                    <div class="feature-desc">Custom steps, conversion windows, drop-off visualization, and CSV exports</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-title">Cohort Analysis</div>
+                    <div class="feature-desc">Weekly/monthly retention heatmaps with interactive visualizations</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <div class="feature-title">Anomaly Detection</div>
+                    <div class="feature-desc">Statistical analysis with rolling z-scores for DAU, signups, and conversions</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <div class="feature-title">A/B Test Calculator</div>
+                    <div class="feature-desc">Sample size calculation and detectable effect analysis for experiments</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <div class="feature-title">RICE Prioritization</div>
+                    <div class="feature-desc">Editable scoring framework with CSV import/export capabilities</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <div class="feature-title">PRD Generator</div>
+                    <div class="feature-desc">Automated product requirements with live metrics integration</div>
+                </div>
+            </div>
+        </div>
 
-         <!-- Testimonials -->
-         <div class="section">
-             <h2 class="section-title">Trusted by product teams</h2>
-             <div class="testimonials">
-                 <div class="testimonial">
-                     <div class="testimonial-text">"This platform transformed how we analyze user behavior. The cohort analysis alone saved us weeks of manual work."</div>
-                     <div class="testimonial-author">
-                         <div class="author-avatar"></div>
-                         <div class="author-info">
-                             <div class="author-name">Sarah Chen</div>
-                             <div class="author-title">Head of Product, TechCorp</div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="testimonial">
-                     <div class="testimonial-text">"The A/B test calculator helped us design better experiments. Our conversion rates improved by 23%."</div>
-                     <div class="testimonial-author">
-                         <div class="author-avatar"></div>
-                         <div class="author-info">
-                             <div class="author-name">Marcus Rodriguez</div>
-                             <div class="author-title">Growth Lead, StartupXYZ</div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="testimonial">
-                     <div class="testimonial-text">"RICE prioritization with live data integration made our roadmap decisions so much clearer."</div>
-                     <div class="testimonial-author">
-                         <div class="author-avatar"></div>
-                         <div class="author-info">
-                             <div class="author-name">Alex Kim</div>
-                             <div class="author-title">Product Manager, InnovateLab</div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+        <!-- About & Links -->
+        <div class="section">
+            <h2 class="section-title">About the project</h2>
+            <div class="about">
+                This open-source platform helps product teams move from raw data to decisions in minutes. Built with Streamlit and designed for clarity and speed, it includes cohorts, funnels, anomalies, A/B sizing, RICE, and a PRD generator. Free to use — no sign-up.
+                <div class="creator">
+                    <div class="avatar" aria-hidden="true"></div>
+                    <div>
+                        Created by <strong>Dheeraj</strong> • <a class="link" href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+                <div class="links">
+                    <a class="link" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener">🚀 Launch Live App</a>
+                    <a class="link" href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener">📁 View Source</a>
+                    <a class="link" href="https://pm-analytics.streamlit.app/#upload-your-data" target="_blank" rel="noopener">📤 Upload Your Data</a>
+                    <a class="link" href="https://pm-analytics.streamlit.app/#kpi-dashboard" target="_blank" rel="noopener">📊 KPI Dashboard</a>
+                </div>
+            </div>
+        </div>
 
-         <!-- Pricing -->
-         <div class="section">
-             <h2 class="section-title">Simple, transparent pricing</h2>
-             <div class="pricing">
-                 <div class="pricing-card">
-                     <div class="pricing-title">Free</div>
-                     <div class="pricing-price">$0</div>
-                     <ul class="pricing-features">
-                         <li>All 7 analytics tools</li>
-                         <li>CSV export</li>
-                         <li>Basic support</li>
-                         <li>Community access</li>
-                     </ul>
-                     <a class="btn btn-ghost" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">Get Started</a>
-                 </div>
-                 <div class="pricing-card featured">
-                     <div class="pricing-title">Pro</div>
-                     <div class="pricing-price">$29/mo</div>
-                     <ul class="pricing-features">
-                         <li>Everything in Free</li>
-                         <li>Advanced visualizations</li>
-                         <li>Priority support</li>
-                         <li>Custom integrations</li>
-                         <li>Team collaboration</li>
-                     </ul>
-                     <a class="btn btn-primary" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">Start Pro Trial</a>
-                 </div>
-                 <div class="pricing-card">
-                     <div class="pricing-title">Enterprise</div>
-                     <div class="pricing-price">Custom</div>
-                     <ul class="pricing-features">
-                         <li>Everything in Pro</li>
-                         <li>On-premise deployment</li>
-                         <li>Dedicated support</li>
-                         <li>Custom analytics</li>
-                         <li>SLA guarantee</li>
-                     </ul>
-                     <a class="btn btn-ghost" href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">Contact Sales</a>
-                 </div>
-             </div>
-         </div>
+        <!-- FAQ -->
+        <div class="section">
+            <h2 class="section-title">Frequently asked questions</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I get started?</div>
+                    <div class="faq-answer">Simply click "Launch Live App" above to access the platform. No registration required - start analyzing immediately.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">What data sources are supported?</div>
+                    <div class="faq-answer">Upload your own CSV files or use our synthetic data generator. We support user events, signup data, and custom metrics.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">Is my data secure?</div>
+                    <div class="faq-answer">Yes, all data processing happens in your browser. We don't store or transmit your data to external servers.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">Can I export my analysis?</div>
+                    <div class="faq-answer">Absolutely! All charts, tables, and reports can be exported as CSV files for further analysis or sharing.</div>
+                </div>
+            </div>
+        </div>
 
-         <!-- FAQ -->
-         <div class="section">
-             <h2 class="section-title">Frequently asked questions</h2>
-             <div class="faq">
-                 <div class="faq-item">
-                     <div class="faq-question" onclick="toggleFAQ(this)">How do I get started?</div>
-                     <div class="faq-answer">Simply click "Launch Live App" above to access the platform. No registration required - start analyzing immediately.</div>
-                 </div>
-                 <div class="faq-item">
-                     <div class="faq-question" onclick="toggleFAQ(this)">What data sources are supported?</div>
-                     <div class="faq-answer">Upload your own CSV files or use our synthetic data generator. We support user events, signup data, and custom metrics.</div>
-                 </div>
-                 <div class="faq-item">
-                     <div class="faq-question" onclick="toggleFAQ(this)">Is my data secure?</div>
-                     <div class="faq-answer">Yes, all data processing happens in your browser. We don't store or transmit your data to external servers.</div>
-                 </div>
-                 <div class="faq-item">
-                     <div class="faq-question" onclick="toggleFAQ(this)">Can I export my analysis?</div>
-                     <div class="faq-answer">Absolutely! All charts, tables, and reports can be exported as CSV files for further analysis or sharing.</div>
-                 </div>
-             </div>
-         </div>
-
-         <div class="footer">
-             <div>© <span id="year"></span> Product Analytics. All rights reserved.</div>
-             <div>
-                 <a href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">Live App</a>
-                 &nbsp;·&nbsp;
-                 <a href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">GitHub</a>
-                 &nbsp;·&nbsp;
-                 <a href="#" aria-disabled="true">Privacy</a>
-             </div>
-         </div>
-     </div>
-     <script>
-         document.getElementById('year').textContent = new Date().getFullYear();
-         function toggleFAQ(element) {
-             const answer = element.nextElementSibling;
-             const isActive = answer.classList.contains('active');
-             document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-             if (!isActive) answer.classList.add('active');
-         }
-     </script>
- </body>
- </html>
+        <div class="footer">
+            <div>© <span id="year"></span> Product Analytics. All rights reserved.</div>
+            <div>
+                <a href="https://pm-analytics.streamlit.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+                &nbsp;·&nbsp;
+                <a href="https://github.com/Dheerajtechie/Product-Analytics-App" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="#" aria-disabled="true">Privacy</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+            if (!isActive) answer.classList.add('active');
+        }
+    </script>
+</body>
+</html>
